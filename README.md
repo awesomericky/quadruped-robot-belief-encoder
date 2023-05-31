@@ -3,7 +3,7 @@ Implementation of some core elements of "Learning robust perceptive locomotion f
 
 <img width=1000 src='image/figure.png'>
 
-# Description
+## Description
 This repository includes implementation of two elements.
 1. Student policy network
 2. Heightmap noise generator
@@ -14,12 +14,12 @@ Privilege information decoder, included in the paper, is excluded because they w
 Heightmap noise generator is composed of **three noise models** to handle errors available in real-world use cases due to depth camera noise, state estimation error/drift etc. 
 It is implemented in *C++* because the [Raisim](https://raisim.com/) simulator that we are actively using implements environments in *C++* for fast simulation.
 
-# Dependencies
+## Dependencies
 - numpy
 - pytorch
 - ruamel.yaml
 
-# Run example
+## Run example
 1. Student policy network
 ```
 cd model
@@ -36,6 +36,6 @@ make
 ./noise_example
 ```
 
-# Contributor
+## Contributor
 - [Yunho Kim](https://github.com/awesomericky)
 - [Jinhyeok Choi](https://github.com/Triangle2022)
