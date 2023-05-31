@@ -1,0 +1,35 @@
+student_model:
+  policy:
+    MLP:
+      extero_encoder:
+        shape: [ 80, 60 ]
+        activation: leakyrelu
+        output: 24
+      base_net:
+        shape: [ 256, 160, 128 ]
+        activation: leakyrelu
+
+  belief_encoder:
+    GRU:
+      recurrent_encoder:
+        hidden: 50
+        num_layers: 2
+        batch_first: False
+        dropout: 0.
+    MLP:
+      attention_encoder:
+        shape: [ 64, 64 ]
+        activation: leakyrelu
+      state_encoder:
+        shape: [ 64, 64 ]
+        activation: leakyrelu
+        output: 24
+
+  belief_decoder:
+    MLP:
+      attention_encoder:
+        shape: [64, 64]
+        activation: leakyrelu
+      extero_decoder:
+        shape: [64, 64]
+        activation: leakyrelu
